@@ -20,19 +20,19 @@ jobs:
     - name: Build project
       run: dotnet build --no-restore
     - name: Publish project (Windows, x86)
-      run: dotnet publish --runtime win-x86 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/ConsoleApp/bin/Release/net8.0/win-x86/publish/ConsoleApp.exe" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Win-x86.exe"
+      run: dotnet publish --runtime win-x86 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/bin/Release/net8.0/win-x86/publish/PodcastsConsole.exe" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Win-x86.exe"
     - name: Publish project (Windows, x64)
-      run: dotnet publish --runtime win-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/ConsoleApp/bin/Release/net8.0/win-x64/publish/ConsoleApp.exe" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Win-x64.exe"
+      run: dotnet publish --runtime win-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/bin/Release/net8.0/win-x64/publish/PodcastsConsole.exe" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Win-x64.exe"
     - name: Publish project (Windows, ARM64)
-      run: dotnet publish --runtime win-arm64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/ConsoleApp/bin/Release/net8.0/win-arm64/publish/ConsoleApp.exe" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Win-ARM64.exe"
+      run: dotnet publish --runtime win-arm64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/bin/Release/net8.0/win-arm64/publish/PodcastsConsole.exe" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Win-ARM64.exe"
     - name: Publish project (Linux, x64)
-      run: dotnet publish --runtime linux-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/ConsoleApp/bin/Release/net8.0/linux-x64/publish/ConsoleApp" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Linux-x64"
+      run: dotnet publish --runtime linux-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/bin/Release/net8.0/linux-x64/publish/PodcastsConsole" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Linux-x64"
     - name: Publish project (Linux, ARM64)
-      run: dotnet publish --runtime linux-arm64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/ConsoleApp/bin/Release/net8.0/linux-arm64/publish/ConsoleApp" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Linux-ARM64"
+      run: dotnet publish --runtime linux-arm64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/bin/Release/net8.0/linux-arm64/publish/PodcastsConsole" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-Linux-ARM64"
     - name: Publish project (macOS, x64)
-      run: dotnet publish --runtime osx-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/ConsoleApp/bin/Release/net8.0/osx-x64/publish/ConsoleApp" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-macOS-x64"
+      run: dotnet publish --runtime osx-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/bin/Release/net8.0/osx-x64/publish/PodcastsConsole" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-macOS-x64"
     - name: Publish project (macOS, ARM64)
-      run: dotnet publish --runtime osx-arm64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/ConsoleApp/bin/Release/net8.0/osx-arm64/publish/ConsoleApp" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-macOS-ARM64"
+      run: dotnet publish --runtime osx-arm64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true && mv "/home/runner/work/podcasts-console/podcasts-console/bin/Release/net8.0/osx-arm64/publish/PodcastsConsole" "/home/runner/work/podcasts-console/podcasts-console/PodcastsConsole-macOS-ARM64"
     - name: Get last commit SHA
       run: echo "SHORT_COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
     - name: Create Release
