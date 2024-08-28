@@ -1,5 +1,3 @@
-using System.Data;
-
 namespace PodcastsConsole;
 public class Settings()
 {
@@ -69,5 +67,28 @@ public class Settings()
     /// The directory where the file will be downloaded. Defaults to the binary's location.
     /// </summary>
     public string? DownloadDirectory = null;
+    /// <summary>
+    /// The options for skipping the download of a file
+    /// </summary>
+    public enum SkipOptions
+    {
+        /// <summary>
+        /// The file should be always downloaded. If it already exists, it'll be overwritten
+        /// </summary>
+        NO_SKIP = -1,
+        /// <summary>
+        /// If the file exists, don't overwrite it, and skip the download
+        /// </summary>
+        SKIP_FILE_OVERWRITE = 0,
+        /// <summary>
+        /// If the URL has already been downloaded, skip the download
+        /// </summary>
+        SKIP_FILE_DOWNLOADED_URL = 1
+    }
+    /// <summary>
+    /// The behavior the application should have for skipping duplicate files (already-downloaded or with the same name)
+    /// </summary>
+    public SkipOptions DuplicateLogic = SkipOptions.NO_SKIP;
+    public bool BreakAtFirstDuplicate = false;
 
 }
