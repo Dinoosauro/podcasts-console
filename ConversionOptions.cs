@@ -60,9 +60,9 @@ public class Settings()
     /// </summary>
     public int SleepTime = 100;
     /// <summary>
-    /// The URL of the RSS feed. If not provided, it'll be prompted when running the application.
+    /// A list of the RSS feed URLs to download. If not provided, it'll be prompted when running the application.
     /// </summary>
-    public string? RSSUrl = null;
+    public string[]? RSSUrl = null;
     /// <summary>
     /// The directory where the file will be downloaded. Defaults to the binary's location.
     /// </summary>
@@ -89,6 +89,25 @@ public class Settings()
     /// The behavior the application should have for skipping duplicate files (already-downloaded or with the same name)
     /// </summary>
     public SkipOptions DuplicateLogic = SkipOptions.NO_SKIP;
+    /// <summary>
+    /// If true, the script will stop downloading everything when a duplicate is found
+    /// </summary>
     public bool BreakAtFirstDuplicate = false;
+    /// <summary>
+    /// Reverse the order the podcasts are displayed in the list. This also affects passing the podcast number from argument
+    /// </summary>
+    public bool ReversePodcastOrder = false;
+    /// <summary>
+    /// Keep the indentation of the XML file
+    /// </summary>
+    public bool KeepIndentation = false;
+    /// <summary>
+    /// Keep the new lines in the XML file, even if the indentation shouldn't be kept
+    /// </summary>
+    public bool KeepStandardNewLines = false;
+    /// <summary>
+    /// Save the RSS feed URLs in the RSSFeed.txt file
+    /// </summary>
+    public bool SaveRSSFeed = false;
 
 }
